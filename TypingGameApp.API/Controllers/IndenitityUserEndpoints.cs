@@ -68,7 +68,8 @@ namespace TypingGameApp.API.Controllers
                 {
                     Subject = new ClaimsIdentity(new Claim[]
                     {
-                    new Claim("UserID",user.Id.ToString())
+                    new Claim("UserID", user.Id.ToString()),
+                    new Claim("UserName", user.UserName.ToString())
                     }),
                     Expires = DateTime.UtcNow.AddDays(10),
                     SigningCredentials = new SigningCredentials(

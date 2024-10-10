@@ -36,6 +36,7 @@ builder.Services.Configure<IdentityOptions>(optins =>
 
 builder.Services.AddDbContextPool<AppDbContext>(
       options => options.UseMySql(builder.Configuration.GetConnectionString("DevDB"), new MySqlServerVersion(new Version(8,0,39))));
+builder.Services.AddTransient<TextService>();
 
 builder.Services.AddCors(options =>
 {
